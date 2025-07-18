@@ -84,4 +84,81 @@
 
     a {
       color: #e67e22;
-     
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 2em;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin-top: 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="mailto:info@exentiq.com">Contact Us</a>
+  </nav>
+
+  <header>
+    <h1 class="logo">Exentiq.</h1>
+    <p>Be future-proof and future-ready.</p>
+    <p>Empowering Quality Through Insight and Precision.</p>
+  </header>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At Exentiq, we believe that quality systems should be built on balanced foundations: insight and foresight, precision and adaptability, science and strategy.</p>
+    <p>We treat every organization as a partner, working side by side to elevate quality, reduce risk, and build systems that are not only audit-ready—but future-ready.</p>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Deviation Management Improvement Programs</li>
+      <li>CAPA System Design & Optimization</li>
+      <li>QA Process Audits & Gap Analysis</li>
+      <li>SOP Development & Training</li>
+    </ul>
+  </section>
+
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <h3>What does Exentiq specialize in?</h3>
+    <p>Exentiq is a consultancy focused on improving Quality Assurance (QA) systems in the biotech and life sciences industries. We specialize in Deviation Management, CAPA systems, and compliance optimization.</p>
+
+    <h3>Who do you work with?</h3>
+    <p>We work with biotech startups, mid-sized pharmaceutical companies, and established life sciences organizations looking to strengthen their QA processes and regulatory readiness.</p>
+  </section>
+
+  <footer>
+    <p>Contact us: <a href="mailto:info@exentiq.com">info@exentiq.com</a></p>
+    <p>&copy; 2025 Exentiq</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
