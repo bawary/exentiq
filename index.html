@@ -11,63 +11,77 @@
       padding: 0;
       background: #fefefe;
       color: #333;
+      scroll-behavior: smooth;
     }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #e67e22;
+      padding: 10px 20px;
+      text-align: right;
+      z-index: 1000;
+    }
+
+    nav a {
+      color      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 2px solid white;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: white;
+      color: #e67e22;
+    }
+
     header {
       background: #e67e22;
       color: white;
-      padding: 60px 20px;
+      padding: 100px 20px 60px;
       text-align: center;
     }
+
     .logo {
       font-weight: 700;
       font-size: 2.5em;
       letter-spacing: -0.025em;
-      color: white;
       margin: 0;
     }
+
     section {
       max-width: 800px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     h2 {
       color: #e67e22;
     }
+
     ul {
       padding-left: 20px;
     }
+
     footer {
       background: #333;
       color: white;
       text-align: center;
       padding: 20px;
     }
+
     a {
       color: #e67e22;
-      text-decoration: none;
-    }
-    @media (max-width: 600px) {
-      .logo {
-        font-size: 2em;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1 class="logo">Exentiq.</h1>
-    <p>Be future-proof and future-ready.</p>
-    <p>Empowering Quality Through Insight and Precision.</p>
-  </header>
-
-  <section>
-    <h2>About Us</h2>
-    <p>At Exentiq, we believe that quality systems should be built on balanced foundations: insight and foresight, precision and adaptability, science and strategy.</p>
-    <p>We treat every organization as a partner, working side by side to elevate quality, reduce risk, and build systems that are not only audit-ready—but future-ready.</p>
-  </section>
-
-  <section>
-    <h2>Services</h2>
-    <ul>
-      <li>Deviation Management Improvement Programs</
+     
