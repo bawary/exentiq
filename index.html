@@ -16,15 +16,21 @@
 
     /* Side Menu */
     .menu-icon {
-      position: fixed;
-      top: 15px;
-      left: 20px;
-      font-size: 24px;
-      letter-spacing: 0.5px; 
-      cursor: pointer;
-      z-index: 1001;
-      color: black;
-    }
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  color: black;
+  transition: left 0.3s ease;
+}
+
+/* Move icon to the right when menu is open */
+.side-menu.open + .menu-icon {
+  left: calc(250px + 20px); /* menu width + margin */
+}
+
 
     .side-menu {
       position: fixed;
