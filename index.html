@@ -1,37 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Exentiq – Biotech QA Consultancy</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fefefe;
-      color: #333;
-      scroll-behavior: smooth;
+    }
+
+    /* Menu Icon */
+    .menu-icon {
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      font-size: 24px;
+      z-index: 1001;
+      color: black;
+      text-decoration: none;
+      transition: left 0.3s ease;
     }
 
     /* Side Menu */
-    .menu-icon {
-  position: fixed;
-  top: 15px;
-  left: 20px;
-  font-size: 24px;
-  cursor: pointer;
-  z-index: 1001;
-  color: black;
-  transition: left 0.3s ease;
-}
-
-/* Move icon to the right when menu is open */
-.side-menu.open + .menu-icon {
-  left: calc(250px + 20px); /* menu width + margin */
-}
-
-
     .side-menu {
       position: fixed;
       top: 0;
@@ -45,8 +36,12 @@
       z-index: 1000;
     }
 
-    .side-menu.open {
+    .side-menu:target {
       left: 0;
+    }
+
+    .side-menu:target ~ .menu-icon {
+      left: 270px; /* 250px menu + 20px spacing */
     }
 
     .side-menu h2 {
@@ -65,130 +60,62 @@
       font-size: 1em;
       color: #e67e22;
       text-decoration: none;
-      
-<span class="menu-icon" onclick="toggleMenu()">⋮ Exentiq</span>
-
     }
 
-    header {
-      background: #e67e22;
-      color: white;
-      padding: 100px 20px 60px;
-      text-align: center;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 2.5em;
-      letter-spacing: -0.025em;
-      margin: 0;
-    }
-
-    section {
-      max-width: 800px;
-      margin: auto;
-      padding: 60px 20px;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      color: #e67e22;
-    }
-
-    ul {
-      padding-left: 20px;
+    main {
+      padding: 80px 20px 20px 20px;
     }
 
     footer {
-      background: #333;
-      color: white;
-      text-align: center;
+      margin-top: 40px;
       padding: 20px;
-    }
-
-    a {
-      color: #e67e22;
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      .logo {
-        font-size: 2em;
-      }
+      background: #f4f4f4;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <div class="menu-icon" onclick="toggleMenu()">&#8942;</div>
-
-  <div class="side-menu" id="sideMenu">
-    <h2>Exentiq.</h2>
+  <!-- Side Menu -->
+  <div id="menu" class="side-menu">
+    <h2>Menu</h2>
     <hr>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#faq">FAQ</a>
     <a href="mailto:info@exentiq.com">Contact</a>
   </div>
 
-  <header>
-    <h1 class="logo"><p> </</p>Exentiq.</h1>
-    <p>Be future-proof and future-ready.</p>
-    <p>Empowering Quality Through Insight and Precision.</p>
-  </header>
+  <!-- Menu Icon -->
+  <a href="#menu" class="menu-icon">⋮ Exentiq.</a>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <p>At Exentiq, we believe that quality systems should be built on balanced foundations: insight and foresight, precision and adaptability, science and strategy.</p>
-    <p>We treat every organization as a partner, working side by side to elevate quality, reduce risk, and build systems that are not only audit-ready—but future-ready.</p>
-  </section>
+  <!-- Main Content -->
+  <main>
+    <h1>Exentiq – Biotech QA Consultancy</h1>
 
-  <section id="services">
-    <h2>Services</h2>
+    <h3 id="about">About Us</h3>
+    <p>At Exentiq, we believe that quality systems should be built on balanced foundations: insight and foresight, precision and adaptability, science and strategy. We treat every organization as a partner, working side by side to elevate quality, reduce risk, and build systems that are not only audit-ready—but future-ready.</p>
+
+    <h3 id="services">Services</h3>
     <ul>
       <li>Deviation Management Improvement Programs</li>
       <li>CAPA System Design & Optimization</li>
       <li>QA Process Audits & Gap Analysis</li>
       <li>SOP Development & Training</li>
     </ul>
-  </section>
 
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <h3>What does Exentiq specialize in?</h3>
-    <p>Exentiq is a consultancy focused on improving Quality Assurance (QA) systems in the biotech and life sciences industries. We specialize in Deviation Management, CAPA systems, and compliance optimization.</p>
+    <h3 id="faq">Frequently Asked Questions</h3>
+    <p><strong>What does Exentiq specialize in?</strong><br>
+    Exentiq is a consultancy focused on improving Quality Assurance (QA) systems in the biotech and life sciences industries. We specialize in Deviation Management, CAPA systems, and compliance optimization.</p>
 
-    <h3>Who do you work with?</h3>
-    <p>We work with biotech startups, mid-sized pharmaceutical companies, and established life sciences organizations looking to strengthen their QA processes and regulatory readiness.</p>
-  </section>
+    <p><strong>Who do you work with?</strong><br>
+    We work with biotech startups, mid-sized pharmaceutical companies, and established life sciences organizations looking to strengthen their QA processes and regulatory readiness.</p>
+  </main>
 
   <footer>
     <p>Contact us: <a href="mailto:info@exentiq.com">info@exentiq.com</a></p>
-    <p>&copy; 2025 Exentiq</p>
+    <p>© 2025 Exentiq</p>
   </footer>
-
-  <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-
-    function toggleMenu() {
-      document.getElementById('sideMenu').classList.toggle('open');
-    }
-  </script>
 
 </body>
 </html>
