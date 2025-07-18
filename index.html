@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Exentiq. – Biotech QA Consultancy</title>
+  <title>Exentiq – Biotech QA Consultancy</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -14,29 +14,49 @@
       scroll-behavior: smooth;
     }
 
-    /* Navigation */
-    nav {
+    /* Side Menu */
+    .menu-icon {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .side-menu {
       position: fixed;
       top: 0;
-      width: 100%;
-      background: #e67e22;
-      padding: 10px 20px;
-      text-align: right;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+      padding: 20px;
+      transition: right 0.3s ease;
       z-index: 1000;
     }
 
-    nav a {
-      color      font-weight: bold;
-      text-decoration: none;
-      padding: 10px 20px;
-      border: 2px solid white;
-      border-radius: 4px;
-      transition: background 0.3s;
+    .side-menu.open {
+      right: 0;
     }
 
-    nav a:hover {
-      background: white;
+    .side-menu h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .side-menu hr {
+      margin: 10px 0;
+    }
+
+    .side-menu a {
+      display: block;
+      margin-top: 10px;
+      font-size: 1em;
       color: #e67e22;
+      text-decoration: none;
     }
 
     header {
@@ -91,23 +111,18 @@
       .logo {
         font-size: 2em;
       }
-
-      nav {
-        text-align: center;
-      }
-
-      nav a {
-        display: inline-block;
-        margin-top: 5px;
-      }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="mailto:info@exentiq.com">Contact Us</a>
-  </nav>
+  <div class="menu-icon" onclick="toggleMenu()">&#8942;</div>
+
+  <div class="side-menu" id="sideMenu">
+    <h2>Exentiq.</h2>
+    <hr>
+    <a href="mailto:info@exentiq.com">Contact</a>
+  </div>
 
   <header>
     <h1 class="logo">Exentiq.</h1>
@@ -133,7 +148,7 @@
 
   <section id="faq">
     <h2>Frequently Asked Questions</h2>
-    <h3>What does Exentiq. specialize in?</h3>
+    <h3>What does Exentiq specialize in?</h3>
     <p>Exentiq is a consultancy focused on improving Quality Assurance (QA) systems in the biotech and life sciences industries. We specialize in Deviation Management, CAPA systems, and compliance optimization.</p>
 
     <h3>Who do you work with?</h3>
@@ -158,6 +173,10 @@
     sections.forEach(section => {
       observer.observe(section);
     });
+
+    function toggleMenu() {
+      document.getElementById('sideMenu').classList.toggle('open');
+    }
   </script>
 
 </body>
