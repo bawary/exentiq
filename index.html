@@ -18,27 +18,28 @@
     .menu-icon {
       position: fixed;
       top: 15px;
-      right: 20px;
+      left: 20px;
       font-size: 24px;
       cursor: pointer;
       z-index: 1001;
+      color: black;
     }
 
     .side-menu {
       position: fixed;
       top: 0;
-      right: -250px;
+      left: -250px;
       width: 250px;
       height: 100%;
       background: #fff;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+      box-shadow: 2px 0 5px rgba(0,0,0,0.2);
       padding: 20px;
-      transition: right 0.3s ease;
+      transition: left 0.3s ease;
       z-index: 1000;
     }
 
     .side-menu.open {
-      right: 0;
+      left: 0;
     }
 
     .side-menu h2 {
